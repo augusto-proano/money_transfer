@@ -31,6 +31,7 @@
 }
 #branch-content-server h2 {
   text-align: center;
+  font-size: 2.5vw;
 }
 
 #branch-content-calendar {
@@ -50,8 +51,18 @@
   width: 50%;
 }
 
+.DayPicker {
+  font-size: 2vw !important;
+}
+
 .DayPicker-Day {
   outline: none;
+}
+
+.DayPicker-Months {
+  box-shadow: 0px 0px 0px 1px #6976c9;
+  border: inset 1px #535ebf;
+  border-radius: 5px;
 }
 
 #navbar {
@@ -77,7 +88,7 @@
 #navbar-dropmenu {
   opacity: 0.8;
   margin: 0em 1em;
-  font-size: 30px;
+  font-size: 2.5vw;
 }
 
 img {
