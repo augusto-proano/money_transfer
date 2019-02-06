@@ -1,0 +1,22 @@
+@import '../utils';
+
+#navbar {
+    @include flex(row, space-between);
+    align-items: center;
+    background-image: linear-gradient(45deg, #329af229, #323cb0);
+    border-radius: 0 0 1em 1em;
+}
+
+#navbar-logo {
+    @include flex(row, space-evenly);
+    align-items: center;
+    img {
+        margin: $side-margin;
+    }
+}
+
+#navbar-dropmenu {
+    opacity: .8;
+    margin: $side-margin;
+    font-size: 30px;
+}

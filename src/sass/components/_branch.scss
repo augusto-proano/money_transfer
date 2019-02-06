@@ -1,0 +1,30 @@
+@import '../utils';
+
+#branc {
+    margin: $main-margin;
+}
+
+#branch-title {
+    text-align: center;
+    border-bottom: double 3px #323cb0;
+    margin: $main-margin;
+}
+
+#branch-content {
+    @include flex(row, space-around);
+    margin: $main-margin;
+}
+
+#branch-content-server {
+    @include flex(column, space-around);
+    width: 50%;
+    align-items: center;
+    margin: $main-margin;
+}
+
+#branch-content-calendar {
+    @include flex(column, space-around);
+    width: 50%;
+    align-items: center;
+    margin: $main-margin;
+}
