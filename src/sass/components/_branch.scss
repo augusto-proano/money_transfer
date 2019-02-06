@@ -5,9 +5,12 @@
 }
 
 #branch-title {
-    text-align: center;
-    border-bottom: double 3px #323cb0;
+    @include flex(row, center);
     margin: $main-margin;
+
+    h1 {
+        border-bottom: double 3px #323cb0;
+    }
 }
 
 #branch-content {
@@ -18,13 +21,25 @@
 #branch-content-server {
     @include flex(column, space-around);
     width: 50%;
-    align-items: center;
     margin: $main-margin;
+    
+    h2 {
+        text-align: center;
+    }
+
 }
 
 #branch-content-calendar {
     @include flex(column, space-around);
     width: 50%;
-    align-items: center;
     margin: $main-margin;
+}
+#branch-content-server-button {
+    @include flex(row, space-evenly);
+    width: 50%;
+}
+
+.DayPicker-Day {
+    outline: none;
+    // background-image: linear-gradient( 45deg, rgb(0, 100, 217) 40%, rgb(0, 15, 162) 100% );
 }

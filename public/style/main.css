@@ -3,13 +3,19 @@
 }
 
 #branch-title {
-  text-align: center;
-  border-bottom: double 3px #323cb0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
   margin: 1em;
+}
+#branch-title h1 {
+  border-bottom: double 3px #323cb0;
 }
 
 #branch-content {
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content: space-around;
   margin: 1em;
@@ -17,24 +23,40 @@
 
 #branch-content-server {
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: space-around;
   width: 50%;
-  align-items: center;
   margin: 1em;
+}
+#branch-content-server h2 {
+  text-align: center;
 }
 
 #branch-content-calendar {
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: space-around;
   width: 50%;
-  align-items: center;
   margin: 1em;
+}
+
+#branch-content-server-button {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.DayPicker-Day {
+  outline: none;
 }
 
 #navbar {
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -44,9 +66,9 @@
 
 #navbar-logo {
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
 }
 #navbar-logo img {
   margin: 0em 1em;

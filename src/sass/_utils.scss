@@ -3,6 +3,7 @@ $main-margin: 1em;
 
 @mixin flex($direction, $content) {
     display: flex;
+    align-items: center;
     flex-direction: $direction;
     justify-content: $content;    
 }

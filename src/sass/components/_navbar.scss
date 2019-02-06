@@ -9,7 +9,7 @@
 
 #navbar-logo {
     @include flex(row, space-evenly);
-    align-items: center;
+    
     img {
         margin: $side-margin;
     }
