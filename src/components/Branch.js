@@ -15,7 +15,7 @@ export default class Branch extends Component {
     }
 
     handleDate(date) {
-        console.log("DATE", date)
+        // console.log("DATE", date)
         this.setState({date})
     }
 
