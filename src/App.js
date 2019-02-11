@@ -3,10 +3,12 @@ import { Navbar, Branch } from './components'
 
 class App extends Component {
   render() {
-    return (<div>
-      <Navbar/>
-      <Branch/>
-    </div>);
+    return (
+      <div>
+        <Navbar />
+        <Branch />
+      </div>
+    );
   }
 }
 

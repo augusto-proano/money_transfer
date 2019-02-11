@@ -112,6 +112,10 @@ button {
   border-radius: 5px;
 }
 
+.DayPicker-wrapper {
+  outline: none;
+}
+
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
   background-image: linear-gradient(45deg, #0064d9 40%, #000fa2 100%);
 }
