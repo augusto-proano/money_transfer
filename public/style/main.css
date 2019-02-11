@@ -1,5 +1,30 @@
+button {
+  cursor: pointer;
+}
+
 #branch {
   margin: 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+#branch button {
+  outline: none;
+  padding: 5px 15px;
+  font-size: 2vw;
+  color: white;
+  border: inset 2px #31418f;
+  border-radius: 10px;
+  background-image: linear-gradient(45deg, #0f1150 45%, #004eff 105%);
+  box-shadow: 0px 0px 0px 1px #2c13f7;
+  transition: 1s;
+}
+#branch button:hover {
+  outline: none;
+  text-shadow: 0px 0px 1px #131af7;
+  color: #202747;
+  background-image: linear-gradient(45deg, #e2ddff73, #5a66f3);
 }
 
 #branch-title {
@@ -7,9 +32,9 @@
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  margin: 1em;
 }
 #branch-title h1 {
+  font-size: 4vw;
   border-bottom: double 3px #323cb0;
 }
 
@@ -18,7 +43,6 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-around;
-  margin: 1em;
 }
 
 #branch-content-server {
@@ -42,13 +66,36 @@
   width: 50%;
   margin: 1em;
 }
+#branch-content-calendar h2 {
+  border-bottom: double 3px #323cb0;
+  font-size: 2.5vw;
+}
 
 #branch-content-server-button {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 50%;
+  width: 60%;
+}
+#branch-content-server-button select {
+  font-size: 2vw;
+}
+#branch-content-server-button button {
+  outline: none;
+  padding: 5px 15px;
+  font-size: 2vw;
+  color: white;
+  border: inset 2px #318b8f;
+  border-radius: 10px;
+  background-image: linear-gradient(45deg, #0a3636 45%, #00d0ff 105%);
+  box-shadow: 0px 0px 0px 1px #13d7f7;
+  transition: 1s;
+}
+#branch-content-server-button button:hover {
+  text-shadow: 0px 0px 10px #13d7f7;
+  color: #203a47;
+  background-image: linear-gradient(45deg, #ddf4ff, #49a2cc);
 }
 
 .DayPicker {
@@ -63,6 +110,10 @@
   box-shadow: 0px 0px 0px 1px #6976c9;
   border: inset 1px #535ebf;
   border-radius: 5px;
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  background-image: linear-gradient(45deg, #0064d9 40%, #000fa2 100%);
 }
 
 #navbar {

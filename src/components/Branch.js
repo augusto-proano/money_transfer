@@ -27,7 +27,7 @@ export default class Branch extends Component {
                 </div>
                 <div id="branch-content">
                     <div id="branch-content-server">
-                        <h2>The server is being checked every {this.state.minutes}</h2>
+                        <h2>The server is being checked every {this.state.minutes} minutes</h2>
                         <div id="branch-content-server-button">
                             <button>Change time</button>
                             <select>
@@ -36,6 +36,7 @@ export default class Branch extends Component {
                                 <option>15</option>
                                 <option>20</option>
                                 <option>25</option>
+                                <option>30</option>
                             </select>
                         </div>
                     </div>
@@ -47,7 +48,7 @@ export default class Branch extends Component {
                         />
                     </div>
                 </div>
-                <button id="branch-button">Send All Transactions</button>
+                <button>Send All Transactions</button>
             </div>
         )
     }
