@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Navbar, Branch } from './components'
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <div>
         <Navbar />
         <Branch />
       </div>
     );
-  }
 }
 
 export default App;
