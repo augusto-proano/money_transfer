@@ -1,11 +1,11 @@
 const fs = require('fs')
-const {sftpServer, sftp} = require('./sftpServer')
+const { sftpServer, sftp } = require('./sftpServer')
 
-const createAndSend = (tr) => {
+const createAndSendBHD = (tr) => {
     // Creation of txt file
     const date = new Date()
     const dateFixer = dateMethod => dateMethod.toString().length > 1 ? dateMethod : `0${dateMethod}`
-   
+
     const year = date.getFullYear()
     const month = dateFixer(date.getMonth() + 1)
     const day = dateFixer(date.getDate())
@@ -30,11 +30,10 @@ const createAndSend = (tr) => {
     txtFile.write(str)
     txtFile.end()
 
-
     // Upload file to host
     sftpServer.then(() => sftp.fastPut(`./server/transactions/TR_${sucOrigenEnvio}${secueEnvio}_${fullDate}_test.txt`, `envios/TR_${sucOrigenEnvio}${secueEnvio}_${fullDate}_test.txt`))
         .then((data) => console.log(data))
         .catch((err) => console.log(err));
 }
 
-module.exports = createAndSend
+module.exports = createAndSendBHD

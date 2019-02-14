@@ -1,4 +1,4 @@
 const dummyData = require('./dummyData')
-const createAndSend = require('./utils')
+const createAndSendBHD = require('./utils')
 
-dummyData.forEach(tr => createAndSend(tr))
+dummyData.forEach(tr => createAndSendBHD(tr))
