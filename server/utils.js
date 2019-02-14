@@ -1,5 +1,5 @@
 const fs = require('fs')
-const stfpServer = require('./sftpServer')
+const {sftpServer, sftp} = require('./sftpServer')
 
 const createAndSend = (tr) => {
     // Creation of txt file
@@ -32,7 +32,7 @@ const createAndSend = (tr) => {
 
 
     // Upload file to host
-    stfpServer.then(() => sftp.fastPut(`./server/transactions/TR_${sucOrigenEnvio}${secueEnvio}_${fullDate}_test.txt`, `envios/TR_${sucOrigenEnvio}${secueEnvio}_${fullDate}_test.txt`))
+    sftpServer.then(() => sftp.fastPut(`./server/transactions/TR_${sucOrigenEnvio}${secueEnvio}_${fullDate}_test.txt`, `envios/TR_${sucOrigenEnvio}${secueEnvio}_${fullDate}_test.txt`))
         .then((data) => console.log(data))
         .catch((err) => console.log(err));
 }

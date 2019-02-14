@@ -2,7 +2,7 @@ const Client = require('ssh2-sftp-client');
 const sftp = new Client();
 
 //Connection to SFTP server
-const sftpServer = sftp.connect({
+ const sftpServer = sftp.connect({
     host: 'sftp.bhdleon.com.do',
     port: 22,
     username: 'sftp_dtc',
@@ -21,4 +21,7 @@ const sftpServer = sftp.connect({
       }
 })
 
-module.exports = sftpServer
+module.exports = {
+  sftpServer,
+  sftp
+}
