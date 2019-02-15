@@ -30,7 +30,7 @@ class Branch extends Component {
     const handleDate = date => {
       store.dispatch(setDate(date))
     }
-    console.log('SERVERTIME', this.state.serverTime)
+
     return (
       <div id="branch">
         <div id="branch-title">
@@ -41,7 +41,7 @@ class Branch extends Component {
             <h2>The server is being checked every {serverTime} minutes</h2>
             <div id="branch-content-server-button">
               <button onClick={this.triggerSetServerTime}>Change time</button>
-              <select onChange={this.handleSelection} name={serverTime}>
+              <select onChange={this.handleSelection}>
                 <option>5</option>
                 <option>10</option>
                 <option>15</option>

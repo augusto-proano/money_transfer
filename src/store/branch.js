@@ -9,8 +9,8 @@ const SET_MAXI_SERVER_TIME = 'SET_MAXI_SERVER_TIME'
 const branchesState = {
   date: new Date(),
   branch: 'BHDLeon',
-  serverTimeBHDLeon: '10',
-  serverTimeMaxipagos: '10'
+  serverTimeBHD: '10',
+  serverTimeMaxi: '10'
 }
 
 
@@ -32,9 +32,9 @@ export default function(state = branchesState, action) {
     case SET_BRANCH:
       return { ...state, branch: action.branch }
     case SET_BHD_SERVER_TIME:
-      return { ...state, serverTimeBHDLeon: action.time }
+      return { ...state, serverTimeBHD: action.time }
     case SET_MAXI_SERVER_TIME:
-      return { ...state, serverTimeMaxipagos: action.time }
+      return { ...state, serverTimeMaxi: action.time }
     default:
       return state
   }

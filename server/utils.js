@@ -3,21 +3,24 @@ const { sftpServer, sftp } = require('./sftpServer')
 
 const createAndSendBHD = tr => {
   // Creation of txt file
-  const date = new Date()
-  const dateFixer = dateMethod =>
-    dateMethod.toString().length > 1 ? dateMethod : `0${dateMethod}`
 
-  const year = date.getFullYear()
-  const month = dateFixer(date.getMonth() + 1)
-  const day = dateFixer(date.getDate())
-  const hour = dateFixer(date.getHours())
-  const minutes = dateFixer(date.getMinutes())
+  // This logic might be used later on
+  // const date = new Date()
+  // const dateFixer = dateMethod =>
+  //   dateMethod.toString().length > 1 ? dateMethod : `0${dateMethod}`
 
-  const fullDate = `${year}${month}${day}`
-  const time = `${hour}:${minutes}`
+  // const year = date.getFullYear()
+  // const month = dateFixer(date.getMonth() + 1)
+  // const day = dateFixer(date.getDate())
+  // const hour = dateFixer(date.getHours())
+  // const minutes = dateFixer(date.getMinutes())
 
+  // const fullDate = `${year}${month}${day}`
+  // const time = `${hour}:${minutes}`
+
+  // values.splice(6, 0, fullDate, time)
+  
   const values = Object.values(tr).map(val => val.toString())
-  values.splice(6, 0, fullDate, time)
 
   let str = []
   values.forEach(val => {
@@ -26,7 +29,7 @@ const createAndSendBHD = tr => {
   })
   str = str.join(',')
 
-  const { sucOrigenEnvio, secueEnvio } = tr
+  const { sucOrigenEnvio, secueEnvio, fullDate } = tr
   const txtFile = fs.createWriteStream(
     `./server/transactions/TR_${sucOrigenEnvio}${secueEnvio}_${fullDate}_test.txt`
   )
