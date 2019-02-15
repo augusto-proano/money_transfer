@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { DayPicker as Calendar } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
-import store, { setDate, setBHDLeonServerTime, setMaxipagosServerTime } from '../store'
+import store, { setDate, setBHDServerTime, setMaxiServerTime } from '../store'
 import { connect } from 'react-redux';
 
 class Branch extends Component {
@@ -20,27 +20,8 @@ class Branch extends Component {
         store.dispatch(setDate(date))
     }
 
-    handleServerTime(event) {
-        const { value } = event.target
-        this.setState({ serverTime: value })
-    }
-
-    changeServerTime() {
-        const { branch } = this.props
-        const { serverTime } = this.state
-
-        if (branch === "BHDLeon") {
-            store.dispatch(setBHDLeonServerTime(serverTime))
-        }
-        else {
-            store.dispatch(setMaxipagosServerTime(serverTime))
-        }
-    }
-
     render() {
-        const { date, branch, serverTimeMaxipagos, serverTimeBHDLeon } = this.props
-        let serverTime = branch === "BHDLeon" ? serverTimeBHDLeon : serverTimeMaxipagos
-        console.log("SERVERTIME", serverTime)
+        const { date, branch, setServerTime, serverTime } = this.props
         
         return (
             <div id="branch">
@@ -51,10 +32,9 @@ class Branch extends Component {
                     <div id="branch-content-server">
                         <h2>The server is being checked every {serverTime} minutes</h2>
                         <div id="branch-content-server-button">
-                            <button onClick={this.changeServerTime}>Change time</button>
+                            <button onClick={setServerTime}>Change time</button>
                             <select
                                 name={serverTime}
-                                onChange={this.handleServerTime}
                             >
                                 <option>5</option>
                                 <option>10</option>
@@ -79,11 +59,31 @@ class Branch extends Component {
     }
 }
 
-const mapState = state => ({
+const mapStateBHD = state => ({
     date: state.branch.date,
     branch: state.branch.branch,
-    serverTimeBHDLeon: state.branch.serverTimeBHDLeon,
-    serverTimeMaxipagos: state.branch.serverTimeMaxipagos
+    serverTime: state.branch.serverTimeBHDLeon
+    
 })
 
-export default connect(mapState)(Branch)
+const mapStateMaxi = state => ({
+    date: state.branch.date,
+    branch: state.branch.branch,
+    serverTime: state.branch.serverTimeMaxipagos
+})
+
+const mapDispatchBHD = dispatch => ({
+    setServerTime: time => {
+        dispatch(setBHDServerTime(time))
+    }
+})
+
+const mapDispathMaxi = dispatch => ({
+    setServerTime: time => {
+        dispatch(setMaxiServerTime(time))
+    }
+})
+
+
+export const BHD = connect(mapStateBHD, mapDispatchBHD)(Branch)
+export const Maxi = connect(mapStateMaxi, mapDispathMaxi)(Branch)
