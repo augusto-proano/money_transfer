@@ -1,12 +1,12 @@
 import React from 'react'
-import { withRouter, Router, Switch } from 'react-router-dom'
+import { withRouter, Route, Switch } from 'react-router-dom'
 import { BHD, Maxi } from './components'
 
 const Routes = () => (
     <Switch>
-        <Router path="/bhdleon" component={BHD}/>
-        <Router path="maxipagos" componet={Maxi} />
+        <Route path="/bhdleon" component={BHD} />
+        <Route path="/maxipagos" component={Maxi} />
     </Switch>
 )
 
-export default Routes
+export default withRouter(Routes)
