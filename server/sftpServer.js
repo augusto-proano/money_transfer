@@ -1,5 +1,5 @@
-const Client = require('ssh2-sftp-client');
-const sftp = new Client();
+const Client = require('ssh2-sftp-client')
+const sftp = new Client()
 
 //Connection to SFTP server
 const sftpServer = sftp.connect({

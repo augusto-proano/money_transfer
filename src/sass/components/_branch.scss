@@ -1,115 +1,126 @@
 @import '../utils';
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #branch {
-    margin: $main-margin;
-    @include flex(column, center);
+  margin: $main-margin;
+  @include flex(column, center);
 
-    button {
-        outline: none;
-        padding: 5px 15px;
-        font-size: 2vw;
-        color: white;
-        border: inset 2px #31418f;
-        border-radius: 10px;
-        background-image: linear-gradient( 45deg, rgb(15, 17, 80) 45%, rgb(0, 78, 255) 105% );
-        box-shadow: 0px 0px 0px 1px rgb(44, 19, 247);
-        transition: 1s;
-    }
+  button {
+    outline: none;
+    padding: 5px 15px;
+    font-size: 2vw;
+    color: white;
+    border: inset 2px #31418f;
+    border-radius: 10px;
+    background-image: linear-gradient(
+      45deg,
+      rgb(15, 17, 80) 45%,
+      rgb(0, 78, 255) 105%
+    );
+    box-shadow: 0px 0px 0px 1px rgb(44, 19, 247);
+    transition: 1s;
+  }
 
-    button:hover {
-        outline: none;
-        text-shadow: 0px 0px 1px rgb(19, 26, 247);
-        color: #202747;
-        background-image: linear-gradient(45deg, #e2ddff73, #5a66f3);
-    }
+  button:hover {
+    outline: none;
+    text-shadow: 0px 0px 1px rgb(19, 26, 247);
+    color: #202747;
+    background-image: linear-gradient(45deg, #e2ddff73, #5a66f3);
+  }
 }
 
 #branch-title {
-    @include flex(row, center);
+  @include flex(row, center);
 
-    h1 {
-        font-size: 4vw;
-        border-bottom: double 3px #323cb0;
-    }
+  h1 {
+    font-size: 4vw;
+    border-bottom: double 3px #323cb0;
+  }
 }
 
 #branch-content {
-    @include flex(row, space-around);
+  @include flex(row, space-around);
 }
 
 #branch-content-server {
-    @include flex(column, space-around);
-    width: 50%;
-    margin: $main-margin;
-    
-    h2 {
-        text-align: center;
-        font-size: 2.5vw;
-    }
+  @include flex(column, space-around);
+  width: 50%;
+  margin: $main-margin;
 
+  h2 {
+    text-align: center;
+    font-size: 2.5vw;
+  }
 }
 
 #branch-content-calendar {
-    @include flex(column, space-around);
-    width: 50%;
-    margin: $main-margin;
-   
-    h2 {
-        border-bottom: double 3px #323cb0;
-        font-size: 2.5vw;
-    }
+  @include flex(column, space-around);
+  width: 50%;
+  margin: $main-margin;
+
+  h2 {
+    border-bottom: double 3px #323cb0;
+    font-size: 2.5vw;
+  }
 }
 
 #branch-content-server-button {
-    @include flex(row, space-evenly);
-    width: 60%;
-    
-    select {
-        font-size: 2vw;
-    }
+  @include flex(row, space-evenly);
+  width: 60%;
 
-    button {
-        outline: none;
-        padding: 5px 15px;
-        font-size: 2vw;
-        color: white;
-        border: inset 2px #318b8f;
-        border-radius: 10px;
-        background-image: linear-gradient( 45deg, rgb(10, 54, 54) 45%, rgb(0, 208, 255) 105% );
-        box-shadow: 0px 0px 0px 1px rgb(19, 215, 247);
-        transition: 1s;
-    }
+  select {
+    font-size: 2vw;
+  }
 
-    button:hover {
-        text-shadow: 0px 0px 10px rgb(19, 215, 247);
-        color: #203a47;
-        background-image: linear-gradient(45deg, #ddf4ff, #49a2cc);
-    }
+  button {
+    outline: none;
+    padding: 5px 15px;
+    font-size: 2vw;
+    color: white;
+    border: inset 2px #318b8f;
+    border-radius: 10px;
+    background-image: linear-gradient(
+      45deg,
+      rgb(10, 54, 54) 45%,
+      rgb(0, 208, 255) 105%
+    );
+    box-shadow: 0px 0px 0px 1px rgb(19, 215, 247);
+    transition: 1s;
+  }
+
+  button:hover {
+    text-shadow: 0px 0px 10px rgb(19, 215, 247);
+    color: #203a47;
+    background-image: linear-gradient(45deg, #ddf4ff, #49a2cc);
+  }
 }
 
 .DayPicker {
-    font-size: 2vw !important;
+  font-size: 2vw !important;
 }
 
 .DayPicker-Day {
-    outline: none;
-    transition: 1s;
+  outline: none;
+  transition: 1s;
 }
 
 .DayPicker-Months {
-    box-shadow: 0px 0px 0px 1px rgb(105, 118, 201);
-    border: inset 1px #535ebf;
-    border-radius: 5px;
+  box-shadow: 0px 0px 0px 1px rgb(105, 118, 201);
+  border: inset 1px #535ebf;
+  border-radius: 5px;
 }
 
 .DayPicker-wrapper {
-    outline: none;
+  outline: none;
 }
 
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
-    background-image: linear-gradient( 45deg, rgb(0, 100, 217) 40%, rgb(0, 15, 162) 100% );
+  background-image: linear-gradient(
+    45deg,
+    rgb(0, 100, 217) 40%,
+    rgb(0, 15, 162) 100%
+  );
 }
