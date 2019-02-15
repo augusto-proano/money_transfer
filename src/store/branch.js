@@ -4,16 +4,17 @@ const SET_BRANCH = 'SET_BRANCH'
 const SET_BHD_SERVER_TIME = 'SET_BHD_SERVER_TIME'
 const SET_MAXI_SERVER_TIME = 'SET_MAXI_SERVER_TIME'
 
+
 // Initial State
-const defaultBranch = {
+const branchesState = {
   date: new Date(),
   branch: 'BHDLeon',
   serverTimeBHDLeon: '10',
   serverTimeMaxipagos: '10'
 }
 
-// Action Creators
 
+// Action Creators
 export const setDate = date => ({ type: SET_DATE, date })
 
 export const setBranch = branch => ({ type: SET_BRANCH, branch })
@@ -22,9 +23,9 @@ export const setBHDServerTime = time => ({ type: SET_BHD_SERVER_TIME, time })
 
 export const setMaxiServerTime = time => ({ type: SET_MAXI_SERVER_TIME, time })
 
-// Reducer
 
-export default function(state = defaultBranch, action) {
+// Reducer
+export default function(state = branchesState, action) {
   switch (action.type) {
     case SET_DATE:
       return { ...state, date: action.date }
