@@ -31,7 +31,7 @@ export const sendFilesBHD = (date) => async () => {
   try {
     const res = await axios.get('/api/bhdleon', {date})
 
-    console.log("RES", res)
+    console.log("RES", res.data)
   } catch (err) {
     console.error(err)
   }
