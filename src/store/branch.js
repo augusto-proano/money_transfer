@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 // Action Types
 const SET_DATE = 'SET_DATE'
 const SET_BRANCH = 'SET_BRANCH'
@@ -22,6 +24,18 @@ export const setBranch = branch => ({ type: SET_BRANCH, branch })
 export const setBHDServerTime = time => ({ type: SET_BHD_SERVER_TIME, time })
 
 export const setMaxiServerTime = time => ({ type: SET_MAXI_SERVER_TIME, time })
+
+
+//Thunk Creators
+export const sendFilesBHD = () => async dispatch => {
+  try {
+    const res = await axios.get('/api/bhdleon')
+
+    console.log("RES", res)
+  } catch (err) {
+    console.error(err)
+  }
+}
 
 
 // Reducer

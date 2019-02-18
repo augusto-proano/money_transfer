@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { DayPicker as Calendar } from 'react-day-picker'
 import 'react-day-picker/lib/style.css'
-import store, { setDate, setBHDServerTime, setMaxiServerTime } from '../store'
+import store, { setDate, setBHDServerTime, setMaxiServerTime, sendFilesBHD } from '../store'
 import { connect } from 'react-redux'
 
 class Branch extends Component {
@@ -25,8 +25,9 @@ class Branch extends Component {
     const { serverTime } = this.state
     setServerTime(serverTime)
   }
+
   render() {
-    const { date, branch, serverTime } = this.props
+    const { date, branch, serverTime, sendFiles } = this.props
     const handleDate = date => {
       store.dispatch(setDate(date))
     }
@@ -56,7 +57,7 @@ class Branch extends Component {
             <Calendar onDayClick={handleDate} selectedDays={date} />
           </div>
         </div>
-        <button>Send All Transactions</button>
+        <button onClick={sendFiles}>Send All Transactions</button>
       </div>
     )
   }
@@ -77,6 +78,9 @@ const mapStateMaxi = state => ({
 const mapDispatchBHD = dispatch => ({
   setServerTime: time => {
     dispatch(setBHDServerTime(time))
+  },
+  sendFiles: () => {
+    dispatch(sendFilesBHD())
   }
 })
 

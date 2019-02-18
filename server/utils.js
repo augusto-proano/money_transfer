@@ -3,8 +3,10 @@ const { sftpServer, sftp } = require('./sftpServer')
 
 const createAndSendBHD = tr => {
   // Creation of txt file
+  
 
   // This logic might be used later on
+
   // const date = new Date()
   // const dateFixer = dateMethod =>
   //   dateMethod.toString().length > 1 ? dateMethod : `0${dateMethod}`
@@ -19,7 +21,7 @@ const createAndSendBHD = tr => {
   // const time = `${hour}:${minutes}`
 
   // values.splice(6, 0, fullDate, time)
-  
+
   const values = Object.values(tr).map(val => val.toString())
 
   let str = []
