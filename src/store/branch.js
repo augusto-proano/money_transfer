@@ -36,15 +36,16 @@ export const sendFilesBHD = date => async () => {
 
 // Reducer
 export default function(state = branchesState, action) {
+  const { date, branch, time } = action
   switch (action.type) {
     case SET_DATE:
-      return { ...state, date: action.date }
+      return { ...state, date }
     case SET_BRANCH:
-      return { ...state, branch: action.branch }
+      return { ...state, branch }
     case SET_BHD_SERVER_TIME:
-      return { ...state, serverTimeBHD: action.time }
+      return { ...state, serverTimeBHD: time }
     case SET_MAXI_SERVER_TIME:
-      return { ...state, serverTimeMaxi: action.time }
+      return { ...state, serverTimeMaxi: time }
     default:
       return state
   }
