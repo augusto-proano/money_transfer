@@ -6,7 +6,6 @@ const SET_BRANCH = 'SET_BRANCH'
 const SET_BHD_SERVER_TIME = 'SET_BHD_SERVER_TIME'
 const SET_MAXI_SERVER_TIME = 'SET_MAXI_SERVER_TIME'
 
-
 // Initial State
 const branchesState = {
   date: new Date(),
@@ -14,7 +13,6 @@ const branchesState = {
   serverTimeBHD: '10',
   serverTimeMaxi: '10'
 }
-
 
 // Action Creators
 export const setDate = date => ({ type: SET_DATE, date })
@@ -25,18 +23,16 @@ export const setBHDServerTime = time => ({ type: SET_BHD_SERVER_TIME, time })
 
 export const setMaxiServerTime = time => ({ type: SET_MAXI_SERVER_TIME, time })
 
-
 //Thunk Creators
-export const sendFilesBHD = (date) => async () => {
+export const sendFilesBHD = date => async () => {
   try {
-    const res = await axios.get('/api/bhdleon', {date})
+    const res = await axios.get('/api/bhdleon', { date })
 
-    console.log("RES", res.data)
+    console.log('RES', res.data)
   } catch (err) {
     console.error(err)
   }
 }
-
 
 // Reducer
 export default function(state = branchesState, action) {

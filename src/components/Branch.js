@@ -66,13 +66,13 @@ class Branch extends Component {
 const mapStateBHD = state => ({
   date: state.branch.date,
   branch: state.branch.branch,
-  serverTime: state.branch.serverTimeBHDLeon
+  serverTime: state.branch.serverTimeBHD
 })
 
 const mapStateMaxi = state => ({
   date: state.branch.date,
   branch: state.branch.branch,
-  serverTime: state.branch.serverTimeMaxipagos
+  serverTime: state.branch.serverTimeMaxi
 })
 
 const mapDispatchBHD = dispatch => ({
