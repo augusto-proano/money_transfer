@@ -1,5 +1,3 @@
-const dummyData = require('./dummyData')
-const createAndSendBHD = require('./utils')
 const morgan = require('morgan')
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -7,15 +5,6 @@ const compression = require('compression')
 
 const app = express()
 module.exports = app
-
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', '*')
-//   res.header(
-//     'Access-Control-Allow-Headers',
-//     'Origin, X-Requested-With, Content-Type, Accept'
-//   )
-//   next()
-// })
 
 app.set('port', process.env.NODE_ENV || 3001)
 
@@ -39,5 +28,3 @@ if (process.env.NODE_ENV === 'production')
 app.listen(app.get('port'), () => {
   console.log(`Server is listening on port ${app.get('port')}`)
 })
-
-// dummyData.forEach(tr => createAndSendBHD(tr))

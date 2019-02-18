@@ -3,7 +3,6 @@ const { sftpServer, sftp } = require('./sftpServer')
 
 const createAndSendBHD = tr => {
   // Creation of txt file
-  
 
   // This logic might be used later on
 

@@ -27,9 +27,9 @@ export const setMaxiServerTime = time => ({ type: SET_MAXI_SERVER_TIME, time })
 
 
 //Thunk Creators
-export const sendFilesBHD = () => async dispatch => {
+export const sendFilesBHD = (date) => async () => {
   try {
-    const res = await axios.get('/api/bhdleon')
+    const res = await axios.get('/api/bhdleon', {date})
 
     console.log("RES", res)
   } catch (err) {
