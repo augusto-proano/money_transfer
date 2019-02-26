@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { getFullDate } from './utils'
 
 // Action Types
 const SET_DATE = 'SET_DATE'
@@ -25,10 +26,10 @@ export const setMaxiServerTime = time => ({ type: SET_MAXI_SERVER_TIME, time })
 
 //Thunk Creators
 export const sendFilesBHD = date => async () => {
+  const fullDate = getFullDate(date)
   try {
-    const res = await axios.get('/api/bhdleon', { date })
-
-    console.log('RES', res.data)
+    const res = await axios.post('/api/bhdleon', { fullDate })
+    console.log(res.data)
   } catch (err) {
     console.error(err)
   }

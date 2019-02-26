@@ -1,0 +1,1 @@
+DTC,A0040,23431,34534540,RD,,20190219,14:40,300,US$,50.63,RD$,,alimentacion,,"Pedro Gonzalez",718-512-5788,"Calle 128",,Corona,"New York","Estados Unidos",,"Carlos Gonzalez",,"Calle 127","Los Prados","Santo Domingo",,"Republica Dominicana",O,R,A005000002,,,,

@@ -57,7 +57,7 @@ class Branch extends Component {
             <Calendar onDayClick={handleDate} selectedDays={date} />
           </div>
         </div>
-        <button onClick={sendFiles}>Send All Transactions</button>
+        <button onClick={() => sendFiles(date)}>Send All Transactions</button>
       </div>
     )
   }
@@ -79,8 +79,8 @@ const mapDispatchBHD = dispatch => ({
   setServerTime: time => {
     dispatch(setBHDServerTime(time))
   },
-  sendFiles: () => {
-    dispatch(sendFilesBHD())
+  sendFiles: (date) => {
+    dispatch(sendFilesBHD(date))
   }
 })
 

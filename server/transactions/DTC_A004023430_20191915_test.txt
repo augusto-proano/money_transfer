@@ -1,1 +1,0 @@
-DTC,A0040,23430,34534543,RD,Romana,20191915,14:30,200,US$,50.63,RD$,,alimentacion,,"Denis Santana",718-512-5788,"Calle 5, #3","La Vigía",Corona,"New York","Estados Unidos",,"Carlos Santana",,"Calle 5, #3","Los Prados","Santo Domingo",,"Republica Dominicana",O,R,A005000002,,,,

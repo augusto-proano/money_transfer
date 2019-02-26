@@ -32,7 +32,7 @@ const createAndSendBHD = tr => {
 
   const { sucOrigenEnvio, secueEnvio, fullDate } = tr
   const txtFile = fs.createWriteStream(
-    `./server/transactions/DTC_${sucOrigenEnvio}${secueEnvio}_${fullDate}_test.txt`
+    `./server/transactions/DTC_${sucOrigenEnvio}${secueEnvio}_${fullDate}.txt`
   )
   txtFile.write(str)
   txtFile.end()
@@ -41,8 +41,8 @@ const createAndSendBHD = tr => {
   sftpServer
     .then(() =>
       sftp.fastPut(
-        `./server/transactions/DTC_${sucOrigenEnvio}${secueEnvio}_${fullDate}_test.txt`,
-        `envios/DTC_${sucOrigenEnvio}${secueEnvio}_${fullDate}_test.txt`
+        `./server/transactions/DTC_${sucOrigenEnvio}${secueEnvio}_${fullDate}.txt`,
+        `envios/DTC_${sucOrigenEnvio}${secueEnvio}_${fullDate}.txt`
       )
     )
     .then(data => console.log(data))
